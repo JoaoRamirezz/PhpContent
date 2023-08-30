@@ -1,10 +1,9 @@
 <?php
 
     $servidor = "localhost";
-    $usuario = "";
+    $usuario = "root";
     $senha = "";
-    $bd = "id";
+    $bd = "tarefa";
 
-    $conn = mysql_connect($servidor, $usuario, $senha, $bd);
-
+    $conn = mysqli_connect($servidor, $usuario, $senha, $bd);
 ?>

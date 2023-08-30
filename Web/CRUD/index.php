@@ -1,5 +1,6 @@
 <?php
 require_once "./includes/header.php";
+require_once "./conexao.php";
 ?>
 
 <main>
@@ -31,6 +32,33 @@ require_once "./includes/header.php";
                         <th>Ação</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <?php
+                        $query = "SELECT * FROM `tarefa`";
+                        $result = mysqli_query($conn, $query);
+                        while($row = mysqli_fetch_assoc($result)){ 
+                    ?>
+
+
+                    <tr>
+                        <td> <?php echo $row['title'] ?> </td>
+                        <td> <?php echo $row['description'] ?> </td>
+                        <td> <?php echo $row['created_at'] ?> </td>
+                        <td> 
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fas fa-marker"></i>
+                            </a>
+                            <a href="delete.php?id=<?=$row['id']?>" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    <?php
+                        }
+                    ?>
+                </tbody>
             </table>
         </div>  
     </div>

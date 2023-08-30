@@ -6,10 +6,10 @@
     $description = $_POST['descricao'];
 
 
-    $sqlInsert = "INSERT INTO `id`(`id`, `title`, `description`) VALUES 
-    (NULL,'$title','$description')";
+    $sqlInsert = "INSERT INTO `tarefa`( `title`, `description`) VALUES 
+    ('$title','$description')";
 
-    $result = mysql_query($conn, $sqlInsert);
+    $result = mysqli_query($conn, $sqlInsert);
 
     if(!$result){
         echo 'Query falhou!';
